@@ -1,0 +1,30 @@
+{"input": "내일 회의는 제가 준비할께요.", "expected": [{"original": "준비할께요", "replacement": "준비할게요"}], "mustNotChange": []}
+{"input": "그건 정말 안되요.", "expected": [{"original": "안되요", "replacement": "안 돼요"}], "mustNotChange": []}
+{"input": "몇일 뒤에 다시 연락 드릴게요.", "expected": [{"original": "몇일", "replacement": "며칠"}], "mustNotChange": []}
+{"input": "오랫만에 친구를 만났다.", "expected": [{"original": "오랫만에", "replacement": "오랜만에"}], "mustNotChange": []}
+{"input": "금새 끝날 거예요.", "expected": [{"original": "금새", "replacement": "금세"}], "mustNotChange": []}
+{"input": "설겆이를 마치고 쉬었다.", "expected": [{"original": "설겆이", "replacement": "설거지"}], "mustNotChange": []}
+{"input": "왠지 오늘은 기분이 좋다.", "expected": [], "mustNotChange": ["왠지"]}
+{"input": "웬지 불안한 느낌이 들었다.", "expected": [{"original": "웬지", "replacement": "왠지"}], "mustNotChange": []}
+{"input": "그는 어의없다는 표정을 지었다.", "expected": [{"original": "어의없다는", "replacement": "어이없다는"}], "mustNotChange": []}
+{"input": "일이 잘 되서 기쁘다.", "expected": [{"original": "되서", "replacement": "돼서"}], "mustNotChange": []}
+{"input": "나는 학교에 갈려고 일찍 일어났다.", "expected": [{"original": "갈려고", "replacement": "가려고"}], "mustNotChange": []}
+{"input": "회의 시간에 늦지 않도록 주의 하세요.", "expected": [{"original": "주의 하세요", "replacement": "주의하세요"}], "mustNotChange": []}
+{"input": "이번 주말에 할수 있는 일이 많다.", "expected": [{"original": "할수", "replacement": "할 수"}], "mustNotChange": []}
+{"input": "지금은 그럴수밖에 없었다.", "expected": [{"original": "그럴수밖에", "replacement": "그럴 수밖에"}], "mustNotChange": []}
+{"input": "공부 할 때는 집중해야 한다.", "expected": [{"original": "공부 할", "replacement": "공부할"}], "mustNotChange": []}
+{"input": "이 책은 읽을만 하다.", "expected": [{"original": "읽을만 하다", "replacement": "읽을 만하다"}], "mustNotChange": []}
+{"input": "그 사람은 나보다 키가 더 큰것 같다.", "expected": [{"original": "큰것", "replacement": "큰 것"}], "mustNotChange": []}
+{"input": "이것은 내가 찾던 책이였다.", "expected": [{"original": "이였다", "replacement": "이었다"}], "mustNotChange": []}
+{"input": "그는 의사로써 일한다.", "expected": [{"original": "로써", "replacement": "로서"}], "mustNotChange": []}
+{"input": "책을 읽음으로서 지식을 얻는다.", "expected": [{"original": "으로서", "replacement": "으로써"}], "mustNotChange": []}
+{"input": "비가 왔슴에도 불구하고 행사는 열렸다.", "expected": [{"original": "왔슴에도", "replacement": "왔음에도"}], "mustNotChange": []}
+{"input": "너는 내일 어떻하겠니?", "expected": [{"original": "어떻하겠니", "replacement": "어떻게 하겠니"}], "mustNotChange": []}
+{"input": "어제 본 영화가 정말 재밌었다고 하드라.", "expected": [{"original": "하드라", "replacement": "하더라"}], "mustNotChange": []}
+{"input": "어짜피 해야 할 일이다.", "expected": [{"original": "어짜피", "replacement": "어차피"}], "mustNotChange": []}
+{"input": "내일부터 다이어트 할거야.", "expected": [{"original": "할거야", "replacement": "할 거야"}], "mustNotChange": []}
+{"input": "우리 집은 학교에서 가까와서 편하다.", "expected": [{"original": "가까와서", "replacement": "가까워서"}], "mustNotChange": []}
+{"input": "그는 문제를 해결하기 위해 노력 하고 있다.", "expected": [{"original": "노력 하고", "replacement": "노력하고"}], "mustNotChange": []}
+{"input": "회의는 3시에 시작할께요.", "expected": [{"original": "할께요", "replacement": "할게요"}], "mustNotChange": ["3시"]}
+{"input": "그는 \"몇일 뒤\"라고 했다.", "expected": [], "mustNotChange": ["\"몇일 뒤\""]}
+{"input": "2024년 5월 3일에 서울에서 김민수 씨를 만났다.", "expected": [], "mustNotChange": ["2024년 5월 3일", "서울", "김민수"]}

@@ -1,0 +1,70 @@
+{
+  "date": "2026-10-24T12:32:15.599Z",
+  "task": "polish",
+  "model": "nvidia/nemotron-3.5-super-vl:free",
+  "tier": "free",
+  "dataPolicy": "may-train",
+  "promptVersions": [
+    "polish@v1"
+  ],
+  "datasets": [
+    {
+      "file": "eval/datasets/polish.en.jsonl",
+      "rows": 6
+    },
+    {
+      "file": "eval/datasets/polish.ko.jsonl",
+      "rows": 20
+    }
+  ],
+  "modelCalls": 4,
+  "elapsedMs": 12959,
+  "metrics": {
+    "recall": 0.5555555555555556,
+    "precision": 0.7142857142857143,
+    "mustNotChangeViolations": 1,
+    "jsonParseFailureRate": 0,
+    "callFailureRate": 0,
+    "avgLatencyMs": 2699,
+    "p95LatencyMs": 4946
+  },
+  "counts": {
+    "expected": 18,
+    "matched": 10,
+    "produced": 14,
+    "correct": 10,
+    "violations": 1,
+    "lines": 26,
+    "degradedLines": 0,
+    "validAltLines": 0,
+    "alternatives": 0
+  },
+  "byLanguage": {
+    "en": {
+      "expected": 4,
+      "matched": 3,
+      "produced": 4,
+      "correct": 3
+    },
+    "ko": {
+      "expected": 14,
+      "matched": 7,
+      "produced": 10,
+      "correct": 7
+    }
+  },
+  "validatorDropped": {
+    "schema_invalid": 6
+  },
+  "notes": [
+    "놓친 수정: begin to start→start / 제안: begin to start→begin",
+    "놓친 수정: 과반수 이상의→과반수의 / 제안: 과반수 이상의 찬성을 얻었다→과반수 찬성을 얻었다",
+    "놓친 수정: 검토를 해→검토해 / 제안: 없음",
+    "놓친 수정: 좋은 것입니다→좋습니다 / 제안: 없음",
+    "놓친 수정: 오고 있는 중입니다→오고 있습니다 / 제안: 없음",
+    "놓친 수정: 불가능하다고 할 수 있다→불가능하다 / 제안: 없음",
+    "놓친 수정: 성공적으로 잘→성공적으로 / 제안: 없음",
+    "놓친 수정: 직접 스스로→직접 / 제안: 없음",
+    "금지 변경 위반: \"접수 마감은 2024년 12월 31일이며 문의는 02-123-4567로 하면 된다.\" → \"접수 마감은 2024년 12월 31일이며, 문의는 02-123-4567로 하면 됩니다.\" (접수 마감은 2024년 12월 31일이며 문의는 02-)"
+  ]
+}

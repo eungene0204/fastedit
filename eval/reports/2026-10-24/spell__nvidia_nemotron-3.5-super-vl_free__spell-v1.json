@@ -1,0 +1,75 @@
+{
+  "date": "2026-10-24T12:31:23.531Z",
+  "task": "spell",
+  "model": "nvidia/nemotron-3.5-super-vl:free",
+  "tier": "free",
+  "dataPolicy": "may-train",
+  "promptVersions": [
+    "spell@v1"
+  ],
+  "datasets": [
+    {
+      "file": "eval/datasets/spell.en.jsonl",
+      "rows": 10
+    },
+    {
+      "file": "eval/datasets/spell.ko.jsonl",
+      "rows": 30
+    }
+  ],
+  "modelCalls": 7,
+  "elapsedMs": 38209,
+  "metrics": {
+    "recall": 0.7297297297297297,
+    "precision": 0.75,
+    "mustNotChangeViolations": 1,
+    "jsonParseFailureRate": 0,
+    "callFailureRate": 0.14285714285714285,
+    "avgLatencyMs": 6206,
+    "p95LatencyMs": 13037
+  },
+  "counts": {
+    "expected": 37,
+    "matched": 27,
+    "produced": 36,
+    "correct": 27,
+    "violations": 1,
+    "lines": 40,
+    "degradedLines": 0,
+    "validAltLines": 0,
+    "alternatives": 0
+  },
+  "byLanguage": {
+    "en": {
+      "expected": 10,
+      "matched": 8,
+      "produced": 10,
+      "correct": 8
+    },
+    "ko": {
+      "expected": 27,
+      "matched": 19,
+      "produced": 26,
+      "correct": 19
+    }
+  },
+  "validatorDropped": {
+    "original_not_found": 1,
+    "no_change": 1,
+    "quote_changed": 1
+  },
+  "notes": [
+    "놓친 수정: dont→doesn't / 제안: dont→don't",
+    "놓친 수정: went→gone / 제안: went→been",
+    "놓친 수정: 오랫만에→오랜만에 / 제안: 오랫만에→오래만에",
+    "금지 변경 위반: \"왠지\" → \"웬지\" (왠지 오늘은 기분이 좋다.)",
+    "놓친 수정: 어의없다는→어이없다는 / 제안: 어의없다는→어이없는",
+    "놓친 수정: 되서→돼서 / 제안: 되서→되어서",
+    "놓친 수정: 그럴수밖에→그럴 수밖에 / 제안: 없음",
+    "놓친 수정: 공부 할→공부할 / 제안: 없음",
+    "놓친 수정: 읽을만 하다→읽을 만하다 / 제안: 읽을만 하다→읽을만하다",
+    "놓친 수정: 으로서→으로써 / 제안: 음으로서→음으로",
+    "놓친 수정: 어떻하겠니→어떻게 하겠니 / 제안: 어떻하겠니→어떡하겠니",
+    "모델 호출 실패 empty: 1회"
+  ]
+}

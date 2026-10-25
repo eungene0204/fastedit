@@ -1,0 +1,50 @@
+{
+  "date": "2026-10-24T12:33:47.874Z",
+  "task": "tone",
+  "model": "nvidia/nemotron-3.5-super-vl:free",
+  "tier": "free",
+  "dataPolicy": "may-train",
+  "promptVersions": [
+    "tone@v1"
+  ],
+  "datasets": [
+    {
+      "file": "eval/datasets/tone.ko.jsonl",
+      "rows": 10
+    }
+  ],
+  "modelCalls": 10,
+  "elapsedMs": 49109,
+  "metrics": {
+    "recall": null,
+    "precision": null,
+    "mustNotChangeViolations": 0,
+    "jsonParseFailureRate": 0,
+    "callFailureRate": 0,
+    "avgLatencyMs": 2498,
+    "p95LatencyMs": 13101,
+    "linesWithValidAlternative": 1,
+    "avgAlternatives": 3
+  },
+  "counts": {
+    "expected": 0,
+    "matched": 0,
+    "produced": 0,
+    "correct": 0,
+    "violations": 0,
+    "lines": 10,
+    "degradedLines": 0,
+    "validAltLines": 10,
+    "alternatives": 30
+  },
+  "byLanguage": {
+    "ko": {
+      "expected": 0,
+      "matched": 0,
+      "produced": 0,
+      "correct": 0
+    }
+  },
+  "validatorDropped": {},
+  "notes": []
+}

@@ -1,0 +1,88 @@
+{
+  "date": "2026-10-24T12:32:02.309Z",
+  "task": "spell",
+  "model": "poolside/laguna-s-2.1:free",
+  "tier": "free",
+  "dataPolicy": "unknown",
+  "promptVersions": [
+    "spell@v1"
+  ],
+  "datasets": [
+    {
+      "file": "eval/datasets/spell.en.jsonl",
+      "rows": 10
+    },
+    {
+      "file": "eval/datasets/spell.ko.jsonl",
+      "rows": 30
+    }
+  ],
+  "modelCalls": 9,
+  "elapsedMs": 38751,
+  "metrics": {
+    "recall": 0.35135135135135137,
+    "precision": 0.6842105263157895,
+    "mustNotChangeViolations": 1,
+    "jsonParseFailureRate": 0,
+    "callFailureRate": 0.4444444444444444,
+    "avgLatencyMs": 7892,
+    "p95LatencyMs": 13505
+  },
+  "counts": {
+    "expected": 37,
+    "matched": 13,
+    "produced": 19,
+    "correct": 13,
+    "violations": 1,
+    "lines": 40,
+    "degradedLines": 0,
+    "validAltLines": 0,
+    "alternatives": 0
+  },
+  "byLanguage": {
+    "en": {
+      "expected": 10,
+      "matched": 3,
+      "produced": 3,
+      "correct": 3
+    },
+    "ko": {
+      "expected": 27,
+      "matched": 10,
+      "produced": 16,
+      "correct": 10
+    }
+  },
+  "validatorDropped": {
+    "low_confidence": 1
+  },
+  "notes": [
+    "[en] 일부/전체 배치 실패: all_failed",
+    "놓친 수정: recieve→receive / 제안: 없음",
+    "놓친 수정: dont→doesn't / 제안: 없음",
+    "놓친 수정: goes→go / 제안: 없음",
+    "놓친 수정: definately→definitely / 제안: 없음",
+    "놓친 수정: Their→They're / 제안: 없음",
+    "놓친 수정: more taller→taller / 제안: 없음",
+    "놓친 수정: went→gone / 제안: 없음",
+    "놓친 수정: 준비할께요→준비할게요 / 제안: 없음",
+    "놓친 수정: 안되요→안 돼요 / 제안: 없음",
+    "놓친 수정: 몇일→며칠 / 제안: 몇일→몇 날",
+    "놓친 수정: 오랫만에→오랜만에 / 제안: 없음",
+    "놓친 수정: 금새→금세 / 제안: 없음",
+    "놓친 수정: 설겆이→설거지 / 제안: 없음",
+    "놓친 수정: 웬지→왠지 / 제안: 없음",
+    "놓친 수정: 되서→돼서 / 제안: 일이 잘 되서 기쁘다.→일이 잘 되어 기쁘다.",
+    "놓친 수정: 갈려고→가려고 / 제안: 없음",
+    "놓친 수정: 공부 할→공부할 / 제안: 없음",
+    "놓친 수정: 읽을만 하다→읽을 만하다 / 제안: 읽을만 하다.→읽을 만 하다.",
+    "놓친 수정: 이였다→이었다 / 제안: 책이였다→책이었습니다",
+    "놓친 수정: 로써→로서 / 제안: 없음",
+    "놓친 수정: 어짜피→어차피 / 제안: 어짜피→어쨌든",
+    "놓친 수정: 할거야→할 거야 / 제안: 없음",
+    "놓친 수정: 가까와서→가까워서 / 제안: 없음",
+    "금지 변경 위반: \"시에 시작할께요\" → \"시에 시작할 거예요\" (회의는 3시에 시작할께요.)",
+    "놓친 수정: 할께요→할게요 / 제안: 시에 시작할께요→시에 시작할 거예요",
+    "모델 호출 실패 rate_limit: 4회"
+  ]
+}

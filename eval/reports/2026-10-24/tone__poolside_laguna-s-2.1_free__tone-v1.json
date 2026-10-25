@@ -1,0 +1,54 @@
+{
+  "date": "2026-10-24T12:34:56.135Z",
+  "task": "tone",
+  "model": "poolside/laguna-s-2.1:free",
+  "tier": "free",
+  "dataPolicy": "unknown",
+  "promptVersions": [
+    "tone@v1"
+  ],
+  "datasets": [
+    {
+      "file": "eval/datasets/tone.ko.jsonl",
+      "rows": 10
+    }
+  ],
+  "modelCalls": 14,
+  "elapsedMs": 68242,
+  "metrics": {
+    "recall": null,
+    "precision": null,
+    "mustNotChangeViolations": 0,
+    "jsonParseFailureRate": 0,
+    "callFailureRate": 0.2857142857142857,
+    "avgLatencyMs": 5178,
+    "p95LatencyMs": 8569,
+    "linesWithValidAlternative": 1,
+    "avgAlternatives": 2.6
+  },
+  "counts": {
+    "expected": 0,
+    "matched": 0,
+    "produced": 0,
+    "correct": 0,
+    "violations": 0,
+    "lines": 10,
+    "degradedLines": 0,
+    "validAltLines": 10,
+    "alternatives": 26
+  },
+  "byLanguage": {
+    "ko": {
+      "expected": 0,
+      "matched": 0,
+      "produced": 0,
+      "correct": 0
+    }
+  },
+  "validatorDropped": {
+    "protected_changed": 2
+  },
+  "notes": [
+    "모델 호출 실패 rate_limit: 4회"
+  ]
+}

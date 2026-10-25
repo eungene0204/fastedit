@@ -1,0 +1,72 @@
+{
+  "date": "2026-10-24T12:36:15.176Z",
+  "task": "polish",
+  "model": "liquid/lfm-2.5-2.6b:free",
+  "tier": "free",
+  "dataPolicy": "unknown",
+  "promptVersions": [
+    "polish@v1"
+  ],
+  "datasets": [
+    {
+      "file": "eval/datasets/polish.en.jsonl",
+      "rows": 6
+    },
+    {
+      "file": "eval/datasets/polish.ko.jsonl",
+      "rows": 20
+    }
+  ],
+  "modelCalls": 4,
+  "elapsedMs": 19560,
+  "metrics": {
+    "recall": 0.4444444444444444,
+    "precision": 0.4,
+    "mustNotChangeViolations": 3,
+    "jsonParseFailureRate": 0,
+    "callFailureRate": 0,
+    "avgLatencyMs": 7088,
+    "p95LatencyMs": 10555
+  },
+  "counts": {
+    "expected": 18,
+    "matched": 8,
+    "produced": 20,
+    "correct": 8,
+    "violations": 3,
+    "lines": 26,
+    "degradedLines": 0,
+    "validAltLines": 0,
+    "alternatives": 0
+  },
+  "byLanguage": {
+    "en": {
+      "expected": 4,
+      "matched": 2,
+      "produced": 3,
+      "correct": 2
+    },
+    "ko": {
+      "expected": 14,
+      "matched": 6,
+      "produced": 17,
+      "correct": 6
+    }
+  },
+  "validatorDropped": {},
+  "notes": [
+    "놓친 수정: repeated the instructions again→repeated the instructions / 제안: 없음",
+    "놓친 수정: Due to the fact that→Because / 제안: Due to the fact that it rained, the game was cancelled.→The game was cancelled due to rain.",
+    "놓친 수정: 다시 재확인→재확인 / 제안: 회의 결과를 다시 재확인해 주세요.→회의 결과를 다시 확인해 주세요.",
+    "놓친 수정: 과반수 이상의→과반수의 / 제안: 이 방법이 과반수 이상의 찬성을 얻었다.→이 방법이 과반수 이상의 찬성을 얻었습니다.",
+    "놓친 수정: 서로 상호→상호 / 제안: 우리는 서로 상호 협력해야 한다.→우리는 서로 협력해야 한다.",
+    "놓친 수정: 매우 아주→매우 / 제안: 그는 매우 아주 열심히 일했다.→그는 열심히 일했다.",
+    "놓친 수정: 매우 많이→매우 / 제안: 오늘 날씨가 매우 많이 춥다.→오늘 날씨가 춥다.",
+    "놓친 수정: 새로운 신제품을→신제품을 / 제안: 없음",
+    "놓친 수정: 검토를 해→검토해 / 제안: 제가 한번 검토를 해 보겠습니다.→검토하겠습니다.",
+    "놓친 수정: 오고 있는 중입니다→오고 있습니다 / 제안: 지금 비가 오고 있는 중입니다.→지금 비가 내리고 있습니다.",
+    "금지 변경 위반: \"접수 마감은 2024년 12월 31일이며 문의는 02-123-4567로 하면 된다.\" → \"접수 마감: 2024년 12월 31일. 문의: 02-123-4567.\" (접수 마감은 2024년 12월 31일이며 문의는 02-)",
+    "금지 변경 위반: \"그는 \"다시 한 번 말씀해 주세요\"라고 요청했다.\" → \"그는 \"다시 한 번 말씀해 주세요\"를 요청했다.\" (그는 \"다시 한 번 말씀해 주세요\"라고 요청했다.)",
+    "금지 변경 위반: \"이 앱은 https://fastedit.example.com 에서 쓸 수 있다.\" → \"이 앱은 https://fastedit.example.com 에서 사용할 수 있다.\" (이 앱은 https://fastedit.example.)"
+  ]
+}

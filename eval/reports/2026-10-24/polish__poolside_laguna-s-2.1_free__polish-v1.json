@@ -1,0 +1,71 @@
+{
+  "date": "2026-10-24T12:32:58.296Z",
+  "task": "polish",
+  "model": "poolside/laguna-s-2.1:free",
+  "tier": "free",
+  "dataPolicy": "unknown",
+  "promptVersions": [
+    "polish@v1"
+  ],
+  "datasets": [
+    {
+      "file": "eval/datasets/polish.en.jsonl",
+      "rows": 6
+    },
+    {
+      "file": "eval/datasets/polish.ko.jsonl",
+      "rows": 20
+    }
+  ],
+  "modelCalls": 6,
+  "elapsedMs": 42685,
+  "metrics": {
+    "recall": 0.7222222222222222,
+    "precision": 0.7222222222222222,
+    "mustNotChangeViolations": 2,
+    "jsonParseFailureRate": 0,
+    "callFailureRate": 0.3333333333333333,
+    "avgLatencyMs": 13495,
+    "p95LatencyMs": 14835
+  },
+  "counts": {
+    "expected": 18,
+    "matched": 13,
+    "produced": 18,
+    "correct": 13,
+    "violations": 2,
+    "lines": 26,
+    "degradedLines": 0,
+    "validAltLines": 0,
+    "alternatives": 0
+  },
+  "byLanguage": {
+    "en": {
+      "expected": 4,
+      "matched": 4,
+      "produced": 5,
+      "correct": 4
+    },
+    "ko": {
+      "expected": 14,
+      "matched": 9,
+      "produced": 13,
+      "correct": 9
+    }
+  },
+  "validatorDropped": {
+    "no_change": 5,
+    "protected_changed": 1
+  },
+  "notes": [
+    "금지 변경 위반: \"We will meet at 3pm in the Berlin office.\" → \"We will meet at 3 p.m. in the Berlin office.\" (We will meet at 3pm in the Ber)",
+    "놓친 수정: 과반수 이상의→과반수의 / 제안: 없음",
+    "놓친 수정: 매우 아주→매우 / 제안: 매우 아주→아주",
+    "놓친 수정: 새로운 신제품을→신제품을 / 제안: 없음",
+    "놓친 수정: 불가능하다고 할 수 있다→불가능하다 / 제안: 그것은 불가능하다고 할 수 있다.→그것은 불가능할 수 있다.",
+    "놓친 수정: 직접 스스로→직접 / 제안: 사용자가 직접 스스로 선택할 수 있다.→사용자가 스스로 선택할 수 있다.",
+    "금지 변경 위반: \"접수 마감은 2024년 12월 31일이며 문의는 02-123-4567로 하면 된다.\" → \"접수 마감은 2024년 12월 31일이며, 문의은 02-123-4567로 하면 된다.\" (접수 마감은 2024년 12월 31일이며 문의는 02-)",
+    "모델 호출 실패 rate_limit: 1회",
+    "모델 호출 실패 empty: 1회"
+  ]
+}

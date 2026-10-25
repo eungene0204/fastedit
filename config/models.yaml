@@ -1,0 +1,114 @@
+# fastedit 모델 하네스 설정. 모델 ID는 코드에 두지 않고 여기서만 관리한다.
+# 무료 모델은 예고 없이 사라지므로, 교체할 때는 이 파일만 고치면 된다. (README의 "무료 모델 교체" 참고)
+# 모델 메타데이터는 https://openrouter.ai/api/v1/models 에서 확인한 값이다.
+
+# deny  : dataPolicy가 no-train인 모델만 쓰고, 요청에 provider.data_collection=deny를 넣는다.
+# allow : 학습에 쓰일 수 있는 호스트도 허용한다. (환경 변수 FASTEDIT_DATA_COLLECTION이 우선)
+dataCollection: allow
+# dataCollection=deny로 쓸 수 있는 모델이 하나도 없을 때의 동작
+#   degrade : 모델을 호출하지 않고 degraded 응답을 돌려준다
+#   relax   : 정책을 allow로 낮춰 계속 처리한다
+onNoEligible: degrade
+# 유료 모델(tier: paid)을 대체 체인에서 쓸지. (환경 변수 FASTEDIT_ALLOW_PAID=1이 우선)
+allowPaidFallback: false
+
+limits:            # OpenRouter 무료 모델 한도: 계정 전체 기준 (키를 여러 개 만들어도 늘지 않는다)
+  perMinute: 20
+  perDay: 1000     # 크레딧 10달러 이상 구매한 계정. 그렇지 않으면 50으로 낮출 것
+  softRatio: 0.8   # 이 비율에 도달하면 priority=auto 요청을 거절한다
+
+client:
+  firstTokenTimeoutMs: 3000
+  totalTimeoutMs: 15000
+
+router:
+  maxAttempts: 3          # 같은 요청에 시도할 최대 모델 수
+  errorRateThreshold: 0.5 # 최근 windowMs 동안 오류율이 이 값을 넘으면 일시 차단
+  windowMs: 300000
+  minSamples: 4
+  cooldownMs: 60000       # 차단 후 이 시간이 지나면 한 번 시험 호출을 허용한다
+
+batch:
+  maxSentences: 8
+  maxChars: 1500
+  concurrency: 3
+
+cache:
+  ttlSec: 604800  # 7일
+
+validator:
+  minConfidence: 0.5
+
+models:
+  - id: nvidia/nemotron-3.5-super-vl:free
+    tier: free
+    tasks: [spell, polish, tone]
+    supportsJsonMode: true
+    # SSE는 열리지만 호스트가 응답 전체를 한 번에 내보낸다(첫 토큰 = 완료 시각, 1.5~8초 변동).
+    # 그래서 3초 첫 토큰 제한이 정상 응답을 끊는다. 비스트리밍 + 총 15초 제한으로 쓴다.
+    supportsStreaming: false
+    contextLength: 1000000
+    maxOutputTokens: 4096   # 실제 한도(131072)가 아니라 교정 출력에 필요한 만큼만 요청한다
+    dataPolicy: may-train   # 학습 허용 호스트만 있음 (기획서 7장: 개인정보 처리방침에 고지)
+    priority: 1
+    enabled: true
+    extraBody:
+      reasoning: { effort: none }
+  - id: poolside/laguna-s-2.1:free
+    tier: free
+    tasks: [spell, polish, tone]
+    supportsJsonMode: false   # supported_parameters에 response_format 없음
+    supportsStreaming: false
+    contextLength: 262144
+    maxOutputTokens: 4096
+    dataPolicy: unknown
+    priority: 2
+    enabled: true
+  - id: liquid/lfm-2.5-2.6b:free
+    tier: free
+    tasks: [spell, polish, tone]
+    supportsJsonMode: true
+    supportsStreaming: false
+    contextLength: 65536
+    maxOutputTokens: 4096
+    dataPolicy: unknown
+    priority: 3
+    enabled: false           # 2.6B 소형 모델: 평가 비교용. 품질 확인 전에는 체인에 넣지 않는다
+  - id: google/gemma-4-31b-it:free
+    tier: free
+    tasks: [spell, polish, tone]
+    supportsJsonMode: true
+    supportsStreaming: true
+    contextLength: 262144
+    maxOutputTokens: 4096
+    dataPolicy: unknown
+    priority: 2
+    enabled: false  # 2026-10-24 점검: 호스트가 429/404를 반환해 비활성화
+  - id: nvidia/nemotron-3-super-120b-a12b:free
+    tier: free
+    tasks: [spell, polish, tone]
+    supportsJsonMode: true
+    supportsStreaming: true
+    contextLength: 262144
+    maxOutputTokens: 4096
+    dataPolicy: unknown
+    priority: 3
+    enabled: false  # 2026-10-24 점검: 호스트가 429/404를 반환해 비활성화
+    extraBody:
+      reasoning: { effort: none }
+  - id: google/gemini-2.5-flash-lite
+    tier: paid
+    tasks: [spell, polish, tone]
+    supportsJsonMode: true
+    supportsStreaming: true
+    contextLength: 1048576
+    maxOutputTokens: 4096
+    dataPolicy: retain      # 유료 API: 학습에는 쓰지 않으나 보관될 수 있음 (확인 필요)
+    priority: 10
+    enabled: true
+
+# 작업별 대체 체인. 앞에서부터 시도한다. 없는 작업은 priority 순으로 모든 모델을 쓴다.
+chains:
+  spell:  [nvidia/nemotron-3.5-super-vl:free, poolside/laguna-s-2.1:free, google/gemini-2.5-flash-lite]
+  polish: [nvidia/nemotron-3.5-super-vl:free, poolside/laguna-s-2.1:free, google/gemini-2.5-flash-lite]
+  tone:   [nvidia/nemotron-3.5-super-vl:free, poolside/laguna-s-2.1:free, google/gemini-2.5-flash-lite]

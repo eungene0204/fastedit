@@ -1,0 +1,98 @@
+{
+  "date": "2026-10-24T12:35:55.196Z",
+  "task": "spell",
+  "model": "liquid/lfm-2.5-2.6b:free",
+  "tier": "free",
+  "dataPolicy": "unknown",
+  "promptVersions": [
+    "spell@v1"
+  ],
+  "datasets": [
+    {
+      "file": "eval/datasets/spell.en.jsonl",
+      "rows": 10
+    },
+    {
+      "file": "eval/datasets/spell.ko.jsonl",
+      "rows": 30
+    }
+  ],
+  "modelCalls": 8,
+  "elapsedMs": 48879,
+  "metrics": {
+    "recall": 0.13513513513513514,
+    "precision": 0.8,
+    "mustNotChangeViolations": 0,
+    "jsonParseFailureRate": 0,
+    "callFailureRate": 0.5,
+    "avgLatencyMs": 8970,
+    "p95LatencyMs": 12625
+  },
+  "counts": {
+    "expected": 37,
+    "matched": 5,
+    "produced": 5,
+    "correct": 4,
+    "violations": 0,
+    "lines": 40,
+    "degradedLines": 0,
+    "validAltLines": 0,
+    "alternatives": 0
+  },
+  "byLanguage": {
+    "en": {
+      "expected": 10,
+      "matched": 4,
+      "produced": 3,
+      "correct": 3
+    },
+    "ko": {
+      "expected": 27,
+      "matched": 1,
+      "produced": 2,
+      "correct": 1
+    }
+  },
+  "validatorDropped": {
+    "original_not_found": 6,
+    "schema_invalid": 2,
+    "quote_changed": 1
+  },
+  "notes": [
+    "놓친 수정: dont→doesn't / 제안: 없음",
+    "놓친 수정: goes→go / 제안: 없음",
+    "놓친 수정: definately→definitely / 제안: 없음",
+    "놓친 수정: Their→They're / 제안: 없음",
+    "놓친 수정: more taller→taller / 제안: 없음",
+    "놓친 수정: went→gone / 제안: 없음",
+    "[ko] 일부/전체 배치 실패: all_failed",
+    "놓친 수정: 준비할께요→준비할게요 / 제안: 없음",
+    "놓친 수정: 안되요→안 돼요 / 제안: 없음",
+    "놓친 수정: 몇일→며칠 / 제안: 없음",
+    "놓친 수정: 오랫만에→오랜만에 / 제안: 없음",
+    "놓친 수정: 금새→금세 / 제안: 없음",
+    "놓친 수정: 설겆이→설거지 / 제안: 설겆이를 마치고 쉬었다.→설겖을 마치고 쉬었다.",
+    "놓친 수정: 웬지→왠지 / 제안: 없음",
+    "놓친 수정: 어의없다는→어이없다는 / 제안: 없음",
+    "놓친 수정: 되서→돼서 / 제안: 없음",
+    "놓친 수정: 갈려고→가려고 / 제안: 없음",
+    "놓친 수정: 주의 하세요→주의하세요 / 제안: 없음",
+    "놓친 수정: 할수→할 수 / 제안: 없음",
+    "놓친 수정: 그럴수밖에→그럴 수밖에 / 제안: 없음",
+    "놓친 수정: 공부 할→공부할 / 제안: 없음",
+    "놓친 수정: 읽을만 하다→읽을 만하다 / 제안: 없음",
+    "놓친 수정: 큰것→큰 것 / 제안: 없음",
+    "놓친 수정: 이였다→이었다 / 제안: 없음",
+    "놓친 수정: 로써→로서 / 제안: 없음",
+    "놓친 수정: 으로서→으로써 / 제안: 없음",
+    "놓친 수정: 왔슴에도→왔음에도 / 제안: 없음",
+    "놓친 수정: 어떻하겠니→어떻게 하겠니 / 제안: 없음",
+    "놓친 수정: 하드라→하더라 / 제안: 없음",
+    "놓친 수정: 어짜피→어차피 / 제안: 없음",
+    "놓친 수정: 할거야→할 거야 / 제안: 없음",
+    "놓친 수정: 가까와서→가까워서 / 제안: 없음",
+    "놓친 수정: 할께요→할게요 / 제안: 없음",
+    "모델 호출 실패 rate_limit: 2회",
+    "모델 호출 실패 empty: 2회"
+  ]
+}

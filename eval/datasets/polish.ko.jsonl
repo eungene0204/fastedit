@@ -1,0 +1,20 @@
+{"input": "회의 결과를 다시 재확인해 주세요.", "expected": [{"original": "다시 재확인", "replacement": "재확인"}], "mustNotChange": []}
+{"input": "이 방법이 과반수 이상의 찬성을 얻었다.", "expected": [{"original": "과반수 이상의", "replacement": "과반수의"}], "mustNotChange": []}
+{"input": "우리는 서로 상호 협력해야 한다.", "expected": [{"original": "서로 상호", "replacement": "상호"}], "mustNotChange": []}
+{"input": "그는 매우 아주 열심히 일했다.", "expected": [{"original": "매우 아주", "replacement": "매우"}], "mustNotChange": []}
+{"input": "가장 최고의 선택이었다.", "expected": [{"original": "가장 최고의", "replacement": "최고의"}], "mustNotChange": []}
+{"input": "오늘 날씨가 매우 많이 춥다.", "expected": [{"original": "매우 많이", "replacement": "매우"}], "mustNotChange": []}
+{"input": "새로운 신제품을 출시했다.", "expected": [{"original": "새로운 신제품을", "replacement": "신제품을"}], "mustNotChange": []}
+{"input": "아침에 회사에 출근을 했다.", "expected": [{"original": "출근을 했다", "replacement": "출근했다"}], "mustNotChange": []}
+{"input": "제가 한번 검토를 해 보겠습니다.", "expected": [{"original": "검토를 해", "replacement": "검토해"}], "mustNotChange": []}
+{"input": "일찍 일어나는 것이 건강에 좋은 것입니다.", "expected": [{"original": "좋은 것입니다", "replacement": "좋습니다"}], "mustNotChange": []}
+{"input": "지금 비가 오고 있는 중입니다.", "expected": [{"original": "오고 있는 중입니다", "replacement": "오고 있습니다"}], "mustNotChange": []}
+{"input": "그것은 불가능하다고 할 수 있다.", "expected": [{"original": "불가능하다고 할 수 있다", "replacement": "불가능하다"}], "mustNotChange": []}
+{"input": "이번 프로젝트는 성공적으로 잘 마무리되었다.", "expected": [{"original": "성공적으로 잘", "replacement": "성공적으로"}], "mustNotChange": []}
+{"input": "사용자가 직접 스스로 선택할 수 있다.", "expected": [{"original": "직접 스스로", "replacement": "직접"}], "mustNotChange": []}
+{"input": "접수 마감은 2024년 12월 31일이며 문의는 02-123-4567로 하면 된다.", "expected": [], "mustNotChange": ["2024년 12월 31일", "02-123-4567"]}
+{"input": "오늘은 도서관에서 책을 읽었다.", "expected": [], "mustNotChange": []}
+{"input": "김민수 대리가 3월 2일 회의에서 발표했다.", "expected": [], "mustNotChange": ["김민수", "3월 2일"]}
+{"input": "그는 \"다시 한 번 말씀해 주세요\"라고 요청했다.", "expected": [], "mustNotChange": ["\"다시 한 번 말씀해 주세요\""]}
+{"input": "지난 주말에는 가족과 함께 부산에 다녀왔다.", "expected": [], "mustNotChange": ["부산"]}
+{"input": "이 앱은 https://fastedit.example.com 에서 쓸 수 있다.", "expected": [], "mustNotChange": ["https://fastedit.example.com"]}

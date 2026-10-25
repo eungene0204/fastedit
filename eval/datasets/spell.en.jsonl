@@ -1,0 +1,10 @@
+{"input": "I will recieve the package tomorrow.", "expected": [{"original": "recieve", "replacement": "receive"}], "mustNotChange": []}
+{"input": "She dont like coffee.", "expected": [{"original": "dont", "replacement": "doesn't"}], "mustNotChange": []}
+{"input": "We goes to the park every Sunday.", "expected": [{"original": "goes", "replacement": "go"}], "mustNotChange": []}
+{"input": "This is definately the best option.", "expected": [{"original": "definately", "replacement": "definitely"}], "mustNotChange": []}
+{"input": "Their going to arrive at 5pm.", "expected": [{"original": "Their", "replacement": "They're"}], "mustNotChange": ["5pm"]}
+{"input": "He is more taller than his brother.", "expected": [{"original": "more taller", "replacement": "taller"}], "mustNotChange": []}
+{"input": "The meeting is on March 3rd at the Seoul office.", "expected": [], "mustNotChange": ["March 3rd", "Seoul"]}
+{"input": "I have went to Paris twice.", "expected": [{"original": "went", "replacement": "gone"}], "mustNotChange": ["Paris"]}
+{"input": "Please send me the the report.", "expected": [{"original": "the the", "replacement": "the"}], "mustNotChange": []}
+{"input": "Its a beautiful day, isnt it?", "expected": [{"original": "Its", "replacement": "It's"}, {"original": "isnt", "replacement": "isn't"}], "mustNotChange": []}
